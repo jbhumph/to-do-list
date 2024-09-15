@@ -1,4 +1,82 @@
 /* styles.css */
 body {
-    background-color: rebeccapurple;
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+    font-family: "roboto", sans-serif;
+    margin: 0;
+}
+
+.page {
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    background-color: #35374B;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding-left: 30px;
+    padding-right: 40px;
+}
+
+h1 {
+    color: deeppink;
+}
+
+h3 {
+    color: #50727B;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.navLink {
+    border: none;
+    background-color: #35374B;
+    color: white;
+    text-align: start;
+    margin-bottom: 10px;
+}
+
+.navLink:hover {
+    color: #78A083;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.projectClass {
+    border: none;
+    background-color: #35374B;
+    color: #344955;
+    text-align: start;
+    margin-bottom: 10px;
+}
+
+.projectClass:hover {
+    color: #78A083;
+}
+
+
+/* PAGE CONTENT */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.content h1 {
+    color: white;
 }
