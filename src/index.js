@@ -2,12 +2,16 @@ import "./styles.css";
 import { loadHome } from "./homePage.js";
 import { loadToday } from "./todayPage";
 import { loadUpcoming } from "./upcomingPage";
+import { addTask } from "./addTask";
 import { addTaskModal } from "./addTaskModal";
 import { Task } from "./task";
+import { todayDate } from "./todayDate";
 
 let tasks = [];
 
 loadHome(tasks);
+
+document.getElementById("fDate").value = todayDate();
 
 // Sidebar links
 const content = document.querySelector(".content");
@@ -37,20 +41,10 @@ taskButton.addEventListener("click", () => {
 
 // SUBMIT
 const submit = document.querySelector("#fSubmit");
-const title = document.querySelector("#fTitle");
-const description = document.querySelector("#fDesc");
 submit.addEventListener("click", (event) => {
-    event.preventDefault()
-    const task = new Task(title.value, description.value);
-    tasks.push(task)
+    event.preventDefault();
+    tasks.push(addTask())
     loadHome(tasks);
-
-    // Reset Modal
-    title.value = "";
-    description.value = "";
-    modal.style.display = "none";
-
-    console.log(tasks);
 })
 
 
