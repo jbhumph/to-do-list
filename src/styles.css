@@ -82,14 +82,78 @@ h3 {
 }
 
 
+/* Events */
+
 .taskBox {
-    border: solid 3px white;
+    border: solid 3px #344955;
     border-radius: 10px;
     width: 500px;
     margin: 10px;
     padding: 10px;
     background-color: #35374B;
+    display: flex;
+    justify-content: space-between;
 }
+
+.taskBox:hover {
+    border-color: white;
+}
+
+/* LEFT */
+.left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 20px;
+}
+
+/* CENTER */
+.center {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.tBar {
+    display: flex;
+    font-size: x-large;
+    justify-content: space-between;
+}
+
+.dBox {
+    font-size: small;
+}
+
+.icons {
+    text-align: right;
+}
+
+.dateBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dbl {
+    text-align: left;
+    font-size: small;
+    color: #888888;
+}
+
+.dbr {
+    text-align: right;
+    font-size: small;
+    color: #78A083;
+}
+
+/* RIGHT */
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: center;
+}
+
+
 
 
 
