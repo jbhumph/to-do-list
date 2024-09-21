@@ -1,3 +1,5 @@
+import { drawEvent } from "./drawEvent";
+
 export const loadHome = (tasks) => {
     const content = document.querySelector('.content');
     const title = document.createElement("h1");
@@ -8,7 +10,16 @@ export const loadHome = (tasks) => {
 
     if (tasks.length > 0) {
         tasks.forEach((task) => {
-            task.printDesc()
+            // task.printDesc()
+            if (task.completed === false) {
+                drawEvent(task);
+            }
+            if (task.completed === true) {
+                drawEvent(task);
+            }
+
         })
     }
+
+
 }

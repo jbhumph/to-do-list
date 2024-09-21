@@ -42,7 +42,19 @@
                     <label for="fDesc">Description</label><br>
                     <input type="text" id="fDesc" name="fDesc"><br>
                     <label for="fDate">Due Date:</label>
-                    <input type="date" id="fDate" name="trip-start" min="2018-01-01" max="2018-12-31" />
+                    <input type="date" id="fDate" name="fDueDate" min="2018-01-01">
+                    <label for="fUrgent">Urgent Task</label>
+                    <input type="checkbox" id="fUrgent" name="fUrgent" value="Yes">
+                    <label for="fProjects">Project: </label>
+                    <select id="fProjects" name="fProjects">
+                        <option value="none">None</option>
+                        <option value="project1">Project 1</option>
+                        <option value="project2">Project 2</option>
+                        <option value="project3">Project 3</option>
+                        <option value="project4">Project 4</option>
+                        <option value="project5">Project 5</option>
+                    </select>
+
                     <input type="submit" id="fSubmit" value="Submit">
                 </form>
             </div>

@@ -99,6 +99,20 @@ h3 {
     border-color: white;
 }
 
+
+/* Completed Box */
+.completeBox {
+    border: solid 3px #888888;
+    border-radius: 10px;
+    width: 500px;
+    margin: 10px;
+    padding: 10px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    color: #888888;
+}
+
 /* LEFT */
 .left {
     display: flex;

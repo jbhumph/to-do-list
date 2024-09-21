@@ -6,8 +6,10 @@ import { addTask } from "./addTask";
 import { addTaskModal } from "./addTaskModal";
 import { Task } from "./task";
 import { todayDate } from "./todayDate";
+import {drawPage} from "./drawPage";
 
-let tasks = [];
+export let tasks = [];
+export let page = 0;
 
 loadHome(tasks);
 
@@ -20,7 +22,8 @@ const modal = document.querySelector("#myModal");
 const homeButton = document.querySelector("#home-button");
 homeButton.addEventListener("click", () => {
     content.innerHTML = "";
-    loadHome(tasks);
+    page = 0;
+    drawPage(page, tasks);
 })
 const todayButton = document.querySelector("#today-button");
 todayButton.addEventListener("click", () => {
