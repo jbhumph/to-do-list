@@ -1,5 +1,6 @@
 import alertNo  from "./images/alertNo.svg";
 import alertYes from "./images/alertYes.svg";
+import alertWhite from "./images/alertWhite.svg";
 import checkedCircle from "./images/circle-checked.svg";
 import edit from "./images/edit.svg";
 import project0 from "./images/project0.svg";
@@ -9,13 +10,15 @@ import project3 from "./images/project3.svg";
 import project4 from "./images/project4.svg";
 import project5 from "./images/project5.svg";
 import trash from "./images/delete.svg";
+import trashHide from "./images/deleteShow.svg";
+import trashShow from "./images/deleteGrey.svg";
 import uncheckedCircle from "./images/circle-unchecked.svg";
 
 import {drawPage} from "./drawPage";
 import {page} from "./index";
 import {tasks} from "./index"
 
-export function drawEvent(event) {
+export function drawEvent(event, array, index) {
     const content = document.querySelector('.content');
     const box = document.createElement("div");
     box.classList.add("taskBox");
@@ -62,20 +65,24 @@ export function drawEvent(event) {
     icons.classList.add("icons");
 
     bTitle.innerHTML = `${event.title}`;
+    /*
     const editButton = document.createElement("img");
     editButton.src = edit;
     editButton.classList.add("editButton");
     editButton.height = 20;
     icons.appendChild(editButton);
+     */
     const deleteButton = document.createElement("img");
     deleteButton.classList.add("deleteButton");
-    deleteButton.src = trash;
+    deleteButton.src = trashShow;
     deleteButton.height = 22;
     icons.appendChild(deleteButton);
     tits.append(bTitle);
     tBar.appendChild(tits);
     tBar.appendChild(icons);
     center.appendChild(tBar);
+
+
 
     // Description
     const dBox = document.createElement("div");
@@ -111,14 +118,27 @@ export function drawEvent(event) {
     urgent.classList.add("urgent");
     const alertButton = document.createElement("img");
     alertButton.classList.add("alertButton");
+    let alertColor = alertNo;
     if (event.priority === true) {
-        alertButton.src = alertYes;
+        alertColor = alertYes;
     } else {
-        alertButton.src = alertNo;
+        alertColor = alertNo;
     }
+    alertButton.src = alertColor;
     alertButton.height = 25;
     urgent.appendChild(alertButton);
     right.appendChild(urgent);
+    alertButton.addEventListener("click", (e) => {
+        event.priority = event.priority === false;
+        drawPage(page, tasks);
+    })
+    alertButton.addEventListener("mouseover", (e) => {
+        alertButton.src = alertWhite;
+    })
+    alertButton.addEventListener("mouseout", (e) => {
+        alertButton.src = alertColor;
+    })
+
     // project assignment button
     const projects = document.createElement("div");
     projects.classList.add("project");
@@ -145,6 +165,22 @@ export function drawEvent(event) {
 
     box.appendChild(right);
     content.appendChild(box);
+
+
+    // Delete Hover
+    deleteButton.addEventListener("mouseover", () => {
+        deleteButton.src = trash;
+    })
+    deleteButton.addEventListener("mouseout", () => {
+        deleteButton.src = trashShow;
+    })
+
+    deleteButton.addEventListener("click", (e) => {
+        array.splice(index, 1);
+        drawPage(page, tasks);
+    })
+
+
 
 
 
