@@ -7,6 +7,7 @@ import { addTaskModal } from "./addTaskModal";
 import { Task } from "./task";
 import { todayDate } from "./todayDate";
 import {drawPage} from "./drawPage";
+import {numericalDate} from "./numericalDate";
 
 export let tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
 export let page = 0;
@@ -28,18 +29,55 @@ homeButton.addEventListener("click", () => {
 const todayButton = document.querySelector("#today-button");
 todayButton.addEventListener("click", () => {
     content.innerHTML = "";
-    loadToday();
+    page = 1;
+    drawPage(page, tasks);
 })
 const upcomingButton = document.querySelector("#upcoming-button");
 upcomingButton.addEventListener("click", () => {
     content.innerHTML = "";
-    loadUpcoming();
+    page = 2;
+    drawPage(page, tasks);
 })
 
 const taskButton = document.querySelector("#task-button");
 taskButton.addEventListener("click", () => {
     addTaskModal(tasks);
     modal.style.display = "block";
+})
+
+const projectOne = document.querySelector("#projectOne");
+projectOne.addEventListener("click", () => {
+    content.innerHTML = "";
+    page = 3;
+    drawPage(page, tasks);
+})
+
+const projectTwo = document.querySelector("#projectTwo");
+projectTwo.addEventListener("click", () => {
+    content.innerHTML = "";
+    page = 4;
+    drawPage(page, tasks);
+})
+
+const projectThree = document.querySelector("#projectThree");
+projectThree.addEventListener("click", () => {
+    content.innerHTML = "";
+    page = 5;
+    drawPage(page, tasks);
+})
+
+const projectFour = document.querySelector("#projectFour");
+projectFour.addEventListener("click", () => {
+    content.innerHTML = "";
+    page = 6;
+    drawPage(page, tasks);
+})
+
+const projectFive = document.querySelector("#projectFive");
+projectFive.addEventListener("click", () => {
+    content.innerHTML = "";
+    page = 7;
+    drawPage(page, tasks);
 })
 
 // SUBMIT
@@ -50,7 +88,6 @@ submit.addEventListener("click", (event) => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
     loadHome(tasks);
 })
-
 
 
 
