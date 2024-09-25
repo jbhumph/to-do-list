@@ -51,6 +51,7 @@ export function drawEvent(event, array, index) {
     circle.addEventListener("click", (e) => {
         event.completed = event.completed === false;
         drawPage(page, tasks)
+        localStorage.setItem("tasks", JSON.stringify(tasks));
     })
 
     // CENTER
@@ -178,6 +179,7 @@ export function drawEvent(event, array, index) {
     deleteButton.addEventListener("click", (e) => {
         array.splice(index, 1);
         drawPage(page, tasks);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
     })
 
 

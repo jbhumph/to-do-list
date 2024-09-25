@@ -8,7 +8,7 @@ import { Task } from "./task";
 import { todayDate } from "./todayDate";
 import {drawPage} from "./drawPage";
 
-export let tasks = [];
+export let tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
 export let page = 0;
 
 loadHome(tasks);
@@ -47,6 +47,7 @@ const submit = document.querySelector("#fSubmit");
 submit.addEventListener("click", (event) => {
     event.preventDefault();
     tasks.push(addTask())
+    localStorage.setItem("tasks", JSON.stringify(tasks));
     loadHome(tasks);
 })
 

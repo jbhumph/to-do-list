@@ -10,18 +10,45 @@
             <h1>To Do List</h1>
             <div class="nav">
                 <h3>NAVIGATION</h3>
-                <button class="navLink" id="task-button">Add Task</button>
-                <button class="navLink" id="home-button">Home Page</button>
-                <button class="navLink" id="today-button">Due Today</button>
-                <button class="navLink" id="upcoming-button">Upcoming Tasks</button>
+                <div class="projectNav">
+                    <img src="images/tladd.svg" height="20">
+                    <button class="navLink" id="task-button">Add Task</button>
+                </div>
+                <div class="projectNav">
+                    <img src="images/home.svg" height="20">
+                    <button class="navLink" id="home-button">Home Page</button>
+                </div>
+                <div class="projectNav">
+                    <img src="images/dueToday.svg" height="20">
+                    <button class="navLink" id="today-button">Due Today</button>
+                </div>
+                <div class="projectNav">
+                    <img src="images/upcoming.svg" height="20">
+                    <button class="navLink" id="upcoming-button">Upcoming Tasks</button>
+                </div>
             </div>
             <div class="projects">
                 <h3>PROJECTS</h3>
-                <button class="navLink">Project 1</button>
-                <button class="projectClass">Project 2</button>
-                <button class="projectClass">Project 3</button>
-                <button class="projectClass">Project 4</button>
-                <button class="projectClass">Project 5</button>
+                <div class="projectNav">
+                    <img src="images/project1.svg" height="20">
+                    <button class="navLink">Project 1</button>
+                </div>
+                <div class="projectNav">
+                    <img src="images/project2.svg" height="20">
+                    <button class="navLink">Project 2</button>
+                </div>
+                <div class="projectNav">
+                    <img src="images/project3.svg" height="20">
+                    <button class="navLink">Project 3</button>
+                </div>
+                <div class="projectNav">
+                    <img src="images/project4.svg" height="20">
+                    <button class="navLink">Project 4</button>
+                </div>
+                <div class="projectNav">
+                    <img src="images/project5.svg" height="20">
+                    <button class="navLink">Project 5</button>
+                </div>
             </div>
         </div>
         <div class="content">
@@ -35,26 +62,35 @@
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h1>Create a new task!</h1>
-                <div>Enter some text here</div>
+                <div>Please enter a new task here</div>
+                <br><br>
                 <form>
-                    <label for="fTitle">Event name</label><br>
-                    <input type="text" id="fTitle" name="fTitle"><br>
-                    <label for="fDesc">Description</label><br>
-                    <input type="text" id="fDesc" name="fDesc"><br>
-                    <label for="fDate">Due Date:</label>
-                    <input type="date" id="fDate" name="fDueDate" min="2018-01-01">
-                    <label for="fUrgent">Urgent Task</label>
-                    <input type="checkbox" id="fUrgent" name="fUrgent" value="Yes">
-                    <label for="fProjects">Project: </label>
-                    <select id="fProjects" name="fProjects">
-                        <option value="none">None</option>
-                        <option value="project1">Project 1</option>
-                        <option value="project2">Project 2</option>
-                        <option value="project3">Project 3</option>
-                        <option value="project4">Project 4</option>
-                        <option value="project5">Project 5</option>
-                    </select>
-
+                    <div class="modalSplit">
+                        <div>
+                            <label for="fTitle">Event Name:</label><br><br>
+                            <input type="text" id="fTitle" name="fTitle"><br>
+                            <hr><br>
+                            <label for="fDesc">Description:</label><br><br>
+                            <textarea id="fDesc" name="fDesc" rows="7" cols="40"></textarea><br>
+                        </div>
+                        <div>
+                            <label for="fDate">Due Date:</label><br><br>
+                            <input type="date" id="fDate" name="fDueDate" min="2018-01-01"><br>
+                            <hr><br>
+                            <input type="checkbox" id="fUrgent" name="fUrgent" value="Yes">
+                            <label for="fUrgent">Urgent Task</label><br>
+                            <hr><br>
+                            <label for="fProjects">Project Class: </label><br><br>
+                            <select id="fProjects" name="fProjects">
+                                <option value="none">None</option>
+                                <option value="project1">Project 1</option>
+                                <option value="project2">Project 2</option>
+                                <option value="project3">Project 3</option>
+                                <option value="project4">Project 4</option>
+                                <option value="project5">Project 5</option>
+                            </select><br>
+                        </div>
+                    </div>
                     <input type="submit" id="fSubmit" value="Submit">
                 </form>
             </div>

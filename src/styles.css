@@ -50,6 +50,10 @@ h3 {
     color: #78A083;
 }
 
+.projectNav {
+    display: flex;
+}
+
 .projects {
     display: flex;
     flex-direction: column;
@@ -111,7 +115,10 @@ h3 {
     display: flex;
     justify-content: space-between;
     color: #888888;
+    text-decoration: line-through;
 }
+
+
 
 /* LEFT */
 .left {
@@ -191,8 +198,17 @@ h3 {
     background-color: #35374B;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 40%; /* Could be more or less, depending on screen size */
+    border: 5px solid #50727B;
+    border-radius: 20px;
+}
+
+.modalSplit {
+    display: flex;
+}
+
+.modalSplit div {
+    margin-right: 30px;
 }
 
 /* The Close Button */
@@ -216,4 +232,52 @@ h3 {
 
 .modal div {
     margin-bottom: 20px;
+}
+
+input[type=text] {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: 3px solid #344955;
+    border-radius: 15px;
+}
+
+textarea {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: 3px solid #344955;
+    border-radius: 15px;
+}
+
+input[type=date] {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: 3px solid #344955;
+    border-radius: 15px;
+}
+
+select {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: 3px solid #344955;
+    border-radius: 15px;
+}
+
+#fSubmit {
+    background-color: #344955;
+    border: 3px solid #50727B;
+    border-radius: 20px;
+    color: white;
+    padding: 15px 35px 15px 35px;
+
+}
+
+#fSubmit:hover {
+    background-color: #50727B;
+    border: 3px solid #344955;
+
+
 }
